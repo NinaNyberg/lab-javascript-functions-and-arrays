@@ -17,17 +17,37 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(arr) {
   let sumOfNum = arr.reduce((a, b) => a + b, 0);
+
   return sumOfNum;
 }
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(arr) {
+  let sumOfNum = arr.reduce((a, b) => a + b, 0);
+
+  // for (let i = 0; i < arr.length; i++) {
+  // if (typeof arr[i] === 'string') {
+  //   let sumOfNum = arr.reduce((a, b) => Number(a) + Number(b), 0);
+  //   return sumOfNum;
+  // }
+
+  if (arr.length === 0) {
+    return 0;
+  } else {
+    return sumOfNum;
+  }
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+  let sumArr = arr.reduce((a, b) => a + b, 0);
+  let avrArr = sumArr / arr.length;
+
+  return avrArr;
+}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
