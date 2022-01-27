@@ -53,11 +53,13 @@ const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 function averageNumbers(arr) {
   let sumArr = arr.reduce((a, b) => a + b, 0);
   let avrArr = sumArr / arr.length;
+  return avrArr;
 
   if (arr.length === 0) {
     return null;
-  } else {
-    return avrArr;
+    // } else {
+    //   return avrArr;
+    // }
   }
 }
 
@@ -67,7 +69,11 @@ const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smar
 function averageWordLength() {}
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -85,14 +91,17 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let newArr = [];
-    if (arr[i] === newArr[i]) {
-      continue;
-    } else {
-      newArr.push(arr[i]);
-    }
-    return newArr;
+  // for (let i = 0; i < arr.length; i++) {
+  //   let newArr = [];
+
+  if (arr.length === 0) {
+    return null;
+    // } else if (newArr.includes(arr[i])) {
+    //   continue;
+    // } else {
+    //   newArr.push(arr[i]);
+    // }
+    // return newArr;
   }
 }
 
@@ -116,7 +125,18 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr, item) {
+  let count = 0;
+  for (element of arr) {
+    if (element === item) {
+      count++;
+      // } else {
+      //   return (count = 1);
+      // }
+    }
+  }
+  return count;
+}
 
 // Iteration #8: Bonus
 const matrix = [
