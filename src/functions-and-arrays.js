@@ -11,7 +11,10 @@ function maxOfTwoNumbers(a, b) {
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(arr) {
-  let longestWord = arr.sort((a, b) => b.length - a.length).slice(0, 1);
+  let longestWord = arr
+    .sort((a, b) => b.length - a.length)
+    .slice(0, 1)
+    .toString();
   if (arr.length === 0) {
     return null;
   } else if (arr.length === 1) {
@@ -108,7 +111,19 @@ function uniquifyArray(arr) {
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arr, word) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  for (element of arr) {
+    if (element === word) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
