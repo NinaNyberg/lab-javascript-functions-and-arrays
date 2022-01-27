@@ -54,22 +54,27 @@ function sum(arr) {
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(arr) {
+  if (arr.length === 0) return null;
+
   let sumArr = arr.reduce((a, b) => a + b, 0);
   let avrArr = sumArr / arr.length;
   return avrArr;
-
-  if (arr.length === 0) {
-    return null;
-    // } else {
-    //   return avrArr;
-    // }
-  }
 }
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() {}
+function averageWordLength(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+  let sum = 0;
+  for (let word of arr) {
+    sum += word.length;
+  }
+  avg = sum / arr.length;
+  return avg;
+}
 
 // Bonus - Iteration #4.1
 function avg(arr) {
@@ -94,18 +99,17 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  // for (let i = 0; i < arr.length; i++) {
-  //   let newArr = [];
+  let newArr = [];
 
-  if (arr.length === 0) {
-    return null;
-    // } else if (newArr.includes(arr[i])) {
-    //   continue;
-    // } else {
-    //   newArr.push(arr[i]);
-    // }
-    // return newArr;
+  if (arr.length === 0) return null;
+
+  for (let item of arr) {
+    if (newArr.indexOf(item) === -1) {
+      newArr.push(item);
+    }
   }
+
+  return newArr;
 }
 
 // Iteration #6: Find elements
