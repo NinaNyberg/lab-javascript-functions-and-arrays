@@ -35,18 +35,20 @@ function sumNumbers(arr) {
 
 // Iteration #3.1 Bonus:
 function sum(arr) {
-  let sumOfNum = arr.reduce((a, b) => a + b, 0);
+  if (arr.length === 0) return 0;
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (typeof arr[i] === 'string') {
-  //     return arr[i].length;
-  //   }
-
-  if (arr.length === 0) {
-    return 0;
-  } else {
-    return sumOfNum;
+  let sum = 0;
+  for (let element of arr) {
+    if (typeof element === 'string') {
+      sum += element.length;
+    } else if (typeof element === 'object') {
+      throw new Error("Unsupported data type sir or ma'am");
+    } else {
+      sum += element;
+    }
   }
+
+  return sum;
 }
 
 // Iteration #4: Calculate the average
@@ -81,6 +83,17 @@ function avg(arr) {
   if (arr.length === 0) {
     return null;
   }
+
+  let sum = 0;
+  for (let element of arr) {
+    if (typeof element === 'string') {
+      sum += element.length;
+    } else {
+      sum += Number(element);
+    }
+  }
+  avg = +(sum / arr.length).toFixed(2);
+  return avg;
 }
 
 // Iteration #5: Unique arrays
